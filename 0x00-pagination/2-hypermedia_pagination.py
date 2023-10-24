@@ -20,6 +20,8 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initializes a new Server instance.
+        """
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -34,15 +36,15 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """Retrieves a page of data.
-            """
-            assert type(page) == int and type(page_size) == int
-            assert page > 0 and page_size > 0
-            start, end = index_range(page,page_size)
-            data = self.dataset()
-            if start > len(data):
-                return []
-            return data[start:end]
+         """Retrieves a page of data.
+         """
+         assert type(page) == int and type(page_size) == int
+         assert page > 0 and page_size > 0
+         start, end = index_range(page,page_size)
+         data = self.dataset()
+         if start > len(data):
+             return []
+         return data[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Retrieves information about a page.
