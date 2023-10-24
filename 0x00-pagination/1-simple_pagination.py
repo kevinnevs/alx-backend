@@ -18,7 +18,7 @@ class Server:
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
-    def __init__(self:
+    def __init__(self):
         """Initializes a new Server instance.
         """
         self.__dataset = None
